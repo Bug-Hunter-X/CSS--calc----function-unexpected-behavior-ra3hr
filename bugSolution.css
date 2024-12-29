@@ -1,0 +1,11 @@
+The issue was caused by inconsistent units within the `calc()` function. The original code had `width: calc(100% - 50%);` which is incorrect as it tries to subtract a percentage from a percentage.  A more appropriate approach is to either specify the 50 pixels directly (`width: calc(100% - 50px);`) or convert the pixel value to a percentage based on the context. 
+
+Here's the corrected CSS:
+
+```css
+/* bugSolution.css */
+div {
+  width: calc(100% - 50px);
+}
+```
+This ensures that the calculation is performed correctly, resulting in the expected behavior.
